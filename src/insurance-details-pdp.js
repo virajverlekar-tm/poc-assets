@@ -59,9 +59,6 @@ export default class InsuranceDetailsPdp extends React.PureComponent {
                       <Text style={[appContainer.cardSubtitle]}>Insurer: {insurance.insurer}</Text>
                       <Text style={[appContainer.cardSubtitle]}>PolicyNo: {insurance.policyNumber}</Text>
                     </View>
-                    <View style={[appContainer.footer, appContainer.p16]}>
-                      <TouchableOpacity style={[appContainer.borderedButton]} onPress={() => {this.props.postMessage('{"type":"redirect","goto":"insurance-details-pdp","extraParams":{"policyId":"'+insurance.id+'"}}');}}><Text style={[]}>View Policy</Text></TouchableOpacity>
-                    </View>
                   </View>
                 </View>
               </View>
