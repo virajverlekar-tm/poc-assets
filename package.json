@@ -1,0 +1,12 @@
+{
+  "name": "react-native-poc-assets",
+  "title": "React Native Assets",
+  "version": "0.0.1",
+  "description": "POC",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "react-native"
+  ],
+  "readmeFilename": "README.md"
+}
