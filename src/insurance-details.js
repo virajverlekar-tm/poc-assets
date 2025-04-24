@@ -48,24 +48,26 @@ export default class InsuranceDetails extends React.PureComponent {
             <ActivityIndicator size={35} color={colors.primary} />
           </View>
           :
-          <ScrollView style={{paddingTop: 20, paddingHorizontal: 25}}>
-            <Text style={[appContainer.textCenter, appContainer.heading]}>Listing - Fetched from API within sdk</Text>
-            {insuranceList.map((insurance, index) => (
-              <View key={index} style={[appContainer.cardContainer]}>
-                <View style={[appContainer.cardWrapper]}>
-                  <View style={[appContainer.insuranceCard]}>
-                    <View style={[appContainer.content, appContainer.p16]}>
-                      <Text style={[appContainer.cardTitle]}>{insurance.policyType}</Text>
-                      <Text style={[appContainer.cardSubtitle]}>Insurer: {insurance.insurer}</Text>
-                      <Text style={[appContainer.cardSubtitle]}>PolicyNo: {insurance.policyNumber}</Text>
-                    </View>
-                    <View style={[appContainer.footer, appContainer.p16]}>
-                      <TouchableOpacity style={[appContainer.borderedButton]} onPress={() => {this.props.postMessage('{"type":"redirect","goto":"insurance-details-pdp","extraParams":{"policyId":"'+insurance.id+'"}}');}}><Text style={[]}>View Policy</Text></TouchableOpacity>
+          <ScrollView>
+            <View style={{paddingTop: 20, paddingBottom: 40, paddingHorizontal: 25}}>
+              <Text style={[appContainer.textCenter, appContainer.heading]}>Listing - Fetched from API within sdk</Text>
+              {insuranceList.map((insurance, index) => (
+                <View key={index} style={[appContainer.cardContainer]}>
+                  <View style={[appContainer.cardWrapper]}>
+                    <View style={[appContainer.insuranceCard]}>
+                      <View style={[appContainer.content, appContainer.p16]}>
+                        <Text style={[appContainer.cardTitle]}>{insurance.policyType}</Text>
+                        <Text style={[appContainer.cardSubtitle]}>Insurer: {insurance.insurer}</Text>
+                        <Text style={[appContainer.cardSubtitle]}>PolicyNo: {insurance.policyNumber}</Text>
+                      </View>
+                      <View style={[appContainer.footer, appContainer.p16]}>
+                        <TouchableOpacity style={[appContainer.borderedButton]} onPress={() => {this.props.postMessage('{"type":"redirect","goto":"insurance-details-pdp","extraParams":{"policyId":"'+insurance.id+'"}}');}}><Text style={[]}>View Policy</Text></TouchableOpacity>
+                      </View>
                     </View>
                   </View>
                 </View>
-              </View>
-            ))}
+              ))}
+            </View>
           </ScrollView>
         }
       </KeyboardAvoidingView>

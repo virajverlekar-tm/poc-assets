@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, View, Text, ActivityIndicator, TouchableOpacity, ScrollView } from 'react-native';
+import { KeyboardAvoidingView, View, Text, ActivityIndicator, TouchableOpacity } from 'react-native';
 import {colors, appContainer} from './styles/styles';
 import apiHelpers from './utils/api-helpers';
 
@@ -48,7 +48,7 @@ export default class InsuranceDetailsPdp extends React.PureComponent {
             <ActivityIndicator size={35} color={colors.primary} />
           </View>
           :
-          <ScrollView style={{paddingTop: 20, paddingHorizontal: 25}}>
+          <View style={{paddingTop: 20, paddingHorizontal: 25}}>
             <Text style={[appContainer.textCenter, appContainer.heading]}>Listing - Fetched from API within sdk based on policy number passed from previous page</Text>
             {insuranceList.map((insurance, index) => (
               <View key={index} style={[appContainer.cardContainer]}>
@@ -63,7 +63,7 @@ export default class InsuranceDetailsPdp extends React.PureComponent {
                 </View>
               </View>
             ))}
-          </ScrollView>
+          </View>
         }
       </KeyboardAvoidingView>
     );
